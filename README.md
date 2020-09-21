@@ -66,6 +66,9 @@ arDdnsCheck "test.org" "subdomain"
 2020-01-09
 - API返回格式又变了，更改正则表达匹配。
 
+2020-09-21
+- 修改wget和curl选择，因为群晖wget版本1.15，不支持TLS v1.2，改为使用curl
+
 # Credit
 
 Original: anrip
