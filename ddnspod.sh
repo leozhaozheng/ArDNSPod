@@ -205,7 +205,17 @@ arApiPost() {
     else
         local param="login_token=${arToken}&format=json&${2}"
     fi
-    wget --quiet --no-check-certificate --secure-protocol=TLSv1_2 --output-document=- --user-agent=$agent --post-data $param $inter
+    
+    curltest=`which curl`
+    if [ -z "$curltest" ] || [ ! -s "`which curl`" ] 
+    then
+	#使用wget
+	wget --quiet --no-check-certificate --secure-protocol=TLSv1_2 --output-document=- --user-agent=$agent --post-data $param $inter
+    else
+        curl -k -s --tlsv1.2 --output - --user-agent $agent --data $param $inter
+    fi    
+    
+    
 }
 
 # Update
