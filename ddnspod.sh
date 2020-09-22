@@ -147,7 +147,7 @@ rreadlink() ( # Execute the function in a *subshell* to localize variables and t
   fi
 )
 
-DIR=$(dirname -- "$(readlink "$0")")
+DIR=$(dirname -- "$(readlink -f "$0")")
 
 # Global Variables:
 
