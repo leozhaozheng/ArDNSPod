@@ -1,6 +1,7 @@
 # ArDNSPod
 
 基于DNSPod用户API实现的纯Shell动态域名客户端，适配网卡地址。
+
 本fork修改了代码，排除了`fdc3`开头的内网地址，适合自己的群晖使用。
 
 # Usage
